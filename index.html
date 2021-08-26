@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./fontawesome/all.min.css">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="./bootstrap/bootstrap.min.css"> -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+    <div class="logo-details">
+        <!-- <i class="fas fa-align-left"></i> -->
+        <div class="logo_name">Covid-19</div>
+        <i class="fas fa-align-right" id="btn" ></i>
+    </div>
+    <ul class="nav-list">
+        <li>
+        <a href="#covid-stats">
+            <i class="fas fa-chart-bar"></i>
+            <span class="links_name">Covid-19 in Thailand</span>
+        </a>
+            <span class="tooltip">สถิติโควิด 19 ในประเทศไทย</span>
+        </li>
+        <li>
+        <a href="#whatisit">
+        <i class="fas fa-viruses"></i>
+            <span class="links_name">About Covid-19</span>
+        </a>
+        <span class="tooltip">โควิด-19 คืออะไร?</span>
+        </li>
+        <li>
+        <a href="#howtodefend">
+        <i class="fas fa-shield-virus"></i>
+            <span class="links_name">Covid-19 Protection</span>
+        </a>
+        <span class="tooltip">การป้องกันโรคโควิด-19</span>
+        </li>
+        <li>
+        <a href="#tidshua">
+        <i class="fas fa-head-side-cough"></i>
+            <span class="links_name">Infected Procedure</span>
+        </a>
+        <span class="tooltip">เมื่อติดเชื้อโควิด-19 ควรทำอย่างไร?</span>
+        </li>
+        <li>
+        <a href="#vaccineeee">
+        <i class="fas fa-syringe"></i>
+            <span class="links_name">Vaccines</span>
+        </a>
+        <span class="tooltip">รายชื่อวัคซีนป้องกันโรคโควิด-19 ที่ได้รับการรับรอง</span>
+        </li>
+        
+
+    </ul>
+    </div>
+    <div id="covid-stats"></div>
+    <section class="home-section">
+        <div class="newupdate-container">
+            <div class="row newupdate-row">
+                <div class="col-4">อัพเดทวันที่</div>
+                <div class="col-4">เคสใหม่</div>
+                <div class="col-4">เคสรวมทั้งหมด</div>
+            </div>
+            <div class="row newdata-row">
+                <div class="col-4 newdate">-</div>
+                <div class="col-4 newcase">-</div>
+                <div class="col-4 newtotalcase">-</div>
+            </div>
+            <canvas id="myChart" style="width:100%; min-height: 200px"></canvas>
+        </div>
+
+        <section id="services" style="display: flex;justify-content: center; width: 100%;">
+            <div class="service-bottom">
+                <div class="service-item">
+                    <h2 id="whatisit">โรคโควิด 19 คืออะไร?</h2>
+                    <ul class="vaccines">
+                        <li>โรคโควิด 19 คือโรคติดต่อซึ่งเกิดจากไวรัสโคโรนาชนิดที่มีการค้นพบล่าสุด</li>   
+                        <li>ไวรัสและโรคอุบัติใหม่นี้ไม่เป็นที่รู้จักเลยก่อนที่จะมีการระบาดในเมืองอู่ฮั่น ประเทศจีนในเดือนธันวาคมปี 2019</li> 
+                        <li>ขณะนี้โรคโควิด 19 มีการระบาดใหญ่ไปทั่ว ส่งผลกระทบแก่หลายประเทศทั่วโลก</li>       
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" style="display: flex;justify-content: center; width: 100%">
+            <div class="service-bottom">
+                <div class="service-item">
+                    <h2>อาการของโรคโควิด 19</h2>
+                    <ul class="vaccines" style="padding-left: 10px;">
+                        <li>ไข้สูง</li>
+                        <li>หนาวสั่น</li>
+                        <li>ปวดศีรษะรุนแรง</li>
+                        <li>เหนื่อยแน่นหน้าอก หายใจไม่สะดวก หรือ หายใจไม่ออก</li>
+                        <li>อาเจียน มากกว่า 5 ครั้ง</li>
+                        <li>ผื่นขึ้นทั้งตัว ผิวหนังลอก</li>
+                        <li>มีจุดจ้ำเลือดออกจํานวนมาก</li>
+                        <li>ใบหน้าเบี้ยว หรือ ปากเบี้ยว</li>
+                        <li>แขนขาอ่อนแรง กล้ามเนื้ออ่อนแรง ไม่สามารถทรงตัวได้</li>
+                        <li>ต่อมน้ําเหลืองโต</li>
+                        <li>ชัก หรือหมดสติ</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+
+        <div class="container">
+            <img id="howtodefend" style="margin-top: 3%; width:100%" src="./240580749_2272575832884456_4236499932281465531_n.png" alt="">
+        </div>
+
+        <div class="container">
+            <img id="tidshua" style="margin-top: 3%; width:100%" src="./240563950_366593391753117_4658018687771567632_n.png" alt="">
+        </div>
+
+
+        <section id="services">
+            <div class="service-bottom" id="vaccineeee">
+              <div class="service-item">
+                <h2>วัคซีนชนิดสารพันธุกรรม(mRNA)</h2>
+                <ul class="vaccines">
+                    <div>
+                        <li>Moderna</li>
+                        <!-- <p>asdfjlksdjklf</p> -->
+                    </div>
+                    <li>Pfizer</li>            
+                </ul>
+              </div>
+              <div class="service-item">
+                <h2>วัคซีนชนิดใช้ไวรัสเป็นพาหะ(Viral Vector)</h2>
+                <ul class="vaccines">
+                  <li>AstraZeneca</li>
+                  <li>Sinopharm</li>            
+              </ul>
+              
+              </div>
+              <div class="service-item">
+                <h2>วัคซีนจากโปรตีนส่วนหนึ่งของเชื้อ (Protein Subunit Vaccine)</h2>
+                <ul class="vaccines">
+                    <li>Novavax</li>         
+                </ul>
+              </div>
+              <div class="service-item">
+                <h2>วัคซีนชนิดเชื้อตาย (Inactivated vaccine)</h2>
+                <ul class="vaccines">
+                    <li>Sinovac</li>         
+                </ul>
+              </div>
+            </div>
+        </section>
+    </section>
+    <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./index.js"></script>
+    <script src="./RB.js"></script>
+</body>
+</html>
