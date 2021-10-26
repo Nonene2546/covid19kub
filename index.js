@@ -3,6 +3,12 @@ const APIURL2 = "https://covid19.ddc.moph.go.th/api/Cases/timeline-cases-all"
 var xValues = []
 var yValues = []
 
+// var xyz = {
+//     brand: "123",
+//     "hello": 213
+// }
+// console.log(xyz["hello"])
+
 async function getAPI(){
     const resp = await fetch(APIURL)
     const respData = await resp.json()
@@ -11,8 +17,8 @@ async function getAPI(){
     const respData2 = await resp2.json()
 
     // console.log(respData)
-    // console.log(respData2)
-    // console.log(respData.length)
+    console.log(respData2)
+    console.log(respData2.length)
     if(respData.length != 0){
         $(".newdate").text(respData[0].txn_date)
         $(".newcase").text(respData[0].new_case)
@@ -22,21 +28,22 @@ async function getAPI(){
     const end = respData2.length
     for(let i=start;i<end;i+=1){
         xValues.push(i)
+        // Math.floor((respData2[i].total_case)/1000)
         yValues.push(Math.floor((respData2[i].total_case)/1000))
     }
-    // console.log(xValues)
-    // console.log(yValues)
+    console.log(xValues)
+    console.log(yValues)
     new Chart("myChart", {
         type: "line",
         data: {
-          labels: xValues,
-          datasets: [{
-            fill: false,
-            lineTension: 0,
-            backgroundColor: "rgba(0,0,255,1.0)",
-            borderColor: "rgba(0,0,255,0.1)",
-            data: yValues
-          }]
+            labels: xValues,
+            datasets: [{
+                fill: false,
+                lineTension: 0,
+                backgroundColor: "rgba(0,0,255,1.0)",
+                borderColor: "rgba(0,0,255,0.1)",
+                data: yValues
+            }]
         },
         options: {
             legend: {display: false},
@@ -49,8 +56,7 @@ async function getAPI(){
                 fontSize: 15
             },
         },
-      });
-      
+    })
 }
 
 getAPI()
