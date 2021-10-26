@@ -22,7 +22,7 @@ async function getAPI(){
     const end = respData2.length
     for(let i=start;i<end;i+=1){
         xValues.push(i)
-        yValues.push(respData2[i].total_case)
+        yValues.push(Math.floor((respData2[i].total_case)/1000))
     }
     // console.log(xValues)
     // console.log(yValues)
